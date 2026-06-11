@@ -9,13 +9,16 @@ require_once 'header.php';
 
             <!-- Search Bar -->
             <div class="search-bar">
-                <form method="GET" action="<?php echo SITE_URL; ?>/?route=games">
+                <form method="GET">
+                    <input type="hidden" name="route" value="games">
+                    
                     <input type="text" name="search" placeholder="Search games..." value="<?php echo esc($_GET['search'] ?? ''); ?>" class="search-input">
                     <button type="submit" class="btn btn-primary">Search</button>
                 </form>
             </div>
 
             <!-- Games Grid -->
+
             <div class="games-grid">
                 <?php if (empty($games)): ?>
                     <p class="no-results">No games found</p>
